@@ -184,7 +184,4 @@ print("Écart de classement  :", ecart)
 print("df", df.assign(rang_surface=rs, rang_cote=rc))
 
 
-#Attention ! Il va falloir utiliser ds fonctions natives de Python dans les fonctions locales que je vous propose pour faire l'exercice. Vous devez caster l'objet Pandas en list().
-
-
 
