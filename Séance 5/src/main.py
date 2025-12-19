@@ -30,9 +30,10 @@ print("Résultat sur le calcul d'un intervalle de confiance")
 #Comme à la séance précédente, l'ensemble des tests se trouve au lien : https://docs.scipy.org/doc/scipy/reference/stats.html
 print("Théorie de la décision")
 
-# =========================
+
 # THÉORIE DE L'ÉCHANTILLONNAGE
-# =========================
+
+
 
 # Calcul des moyennes par modalité
 moyennes = donnees.mean()
@@ -77,9 +78,11 @@ for modalite in frequences_echantillon.index:
 
     print(modalite, ":", round(borne_inf, 3), ";", round(borne_sup, 3))
 
-# =========================
+
+
+
 # THÉORIE DE L'ESTIMATION
-# =========================
+
 
 # On choisit un seul échantillon (le premier)
 echantillon = donnees.iloc[0]
@@ -100,9 +103,11 @@ for modalite in echantillon.index:
 
     print(modalite, ":", round(borne_inf, 3), ";", round(borne_sup, 3))
 
-# =========================
+
+
+
 # THÉORIE DE LA DÉCISION
-# =========================
+
 
 # Test de normalité sur la variable "Pour"
 stat, p_value = scipy.stats.shapiro(donnees["Pour"])
@@ -184,12 +189,6 @@ for modalite, f in frequences_pop.items():
     intervales_pop[modalite] = intervalle_fluctuation_pop(f, n)
 print(intervales_pop, "\n")
 
-
-
-
-
-
-
 #Théorie de l'estimation (intervalles de confiance)
 #2-1 : panda.iloc
 premier_echantillon = donnees.iloc[0]
@@ -213,9 +212,6 @@ def intervalle_confiance(f, n, z=1.96):
 ic_95 = {modalite: intervalle_confiance(f, n)
          for modalite, f in zip(modalites, frequences)}
 print("Intervalle de confiance 95% :", ic_95, "\n")
-
-
-
 
 
 #Théorie de la décision (tests d'hypothèse)
